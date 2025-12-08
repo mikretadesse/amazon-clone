@@ -1,117 +1,109 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 
+import { GrLocation } from "react-icons/gr";
+import { FiSearch } from "react-icons/fi";
+import { BiCart } from "react-icons/bi";
+import { FaCaretDown } from "react-icons/fa";
+
+
+import flag from "../../assets/logo/Flag_of_usa.svg.png";
+import amazonLogo from "../../assets/logo/amazon-logo.png";
+
 function Header() {
-  const [query, setQuery] = useState("");
-  const [category, setCategory] = useState("All");
-  const [mobileOpen, setMobileOpen] = useState(false);
-
   return (
-    <header className={styles.header}>
-      <div className={styles.topBar}>
-        <button
-          className={styles.hamburger}
-          aria-label="Open menu"
-          onClick={() => setMobileOpen(!mobileOpen)}>
-          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden>
-            <path
-              d="M3 6h18M3 12h18M3 18h18"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-        </button>
-
-        <a href="/" className={styles.logo} aria-label="Home">
-          <span className={styles.logoBox}>amaz</span>
-          <span className={styles.logoPrime}>on</span>
-        </a>
-
-        <form
-          className={styles.search}
-          role="search"
-          onSubmit={(e) => e.preventDefault()}>
-          <label htmlFor="searchInput" className="visually-hidden">
-            Search
-          </label>
-
-          <select
-            aria-label="Select category"
-            className={styles.category}
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}>
-            <option>All</option>
-            <option>Books</option>
-            <option>Electronics</option>
-            <option>Fashion</option>
-            <option>Home</option>
-          </select>
-
-          <input
-            id="searchInput"
-            className={styles.searchInput}
-            placeholder="Search Amazon clone"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
+    <header className={styles.Header}>
+      {/* LEFT SECTION */}
+      <div className={styles.Header__left}>
+        {/* Logo */}
+        <Link to="/" className={styles.Header__logoWrapper}>
+          <img
+            src={amazonLogo}
+            alt="Amazon Logo"
+            className={styles.Header__logo}
           />
+        </Link>
 
-          <button className={styles.searchBtn} aria-label="Search">
-            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden>
-              <path
-                d="M21 21l-4.35-4.35"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <circle
-                cx="11"
-                cy="11"
-                r="6"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-              />
-            </svg>
-          </button>
-        </form>
-
-        <nav className={styles.nav} aria-label="Primary">
-          <a className={styles.navItem} href="#">
-            <small>Hello, Sign in</small>
-            <strong>Account & Lists</strong>
-          </a>
-
-          <a className={styles.navItem} href="#">
-            <small>Returns</small>
-            <strong>& Orders</strong>
-          </a>
-
-          <a className={styles.cart} href="#" aria-label="Cart">
-            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden>
-              <path
-                d="M6 6h15l-1.5 9h-11L6 6z"
-                stroke="currentColor"
-                strokeWidth="1.2"
-                fill="none"
-              />
-              <circle cx="10" cy="20" r="1" />
-              <circle cx="18" cy="20" r="1" />
-            </svg>
-            <span className={styles.cartCount}>3</span>
-            <span className={styles.cartText}>Cart</span>
-          </a>
-        </nav>
+        {/* Deliver Section */}
+        <div className={styles.Deliver}>
+          <GrLocation className={styles.Deliver__icon} />
+          <div>
+            <p className={styles.Deliver__small}>Deliver to</p>
+            <span className={styles.Deliver__country}>Ethiopia</span>
+          </div>
+        </div>
       </div>
 
-      <div
-        className={`${styles.mobileMenu} ${mobileOpen ? styles.open : ""}`}
-        aria-hidden={!mobileOpen}>
-        <a href="#">Deals</a>
-        <a href="#">Customer Service</a>
-        <a href="#">Gift Cards</a>
-        <a href="#">Sell</a>
+      {/* SEARCH BAR */}
+      <div className={styles.Search}>
+        <select className={styles.Search__select}>
+          <option>All</option>
+          <option>TVs</option>
+          <option>Books</option>
+          <option>Fashion</option>
+        </select>
+
+        <input
+          type="text"
+          placeholder="Search Amazon"
+          className={styles.Search__input}
+        />
+
+        <button className={styles.Search__button}>
+          <FiSearch size={22} />
+        </button>
+      </div>
+
+      {/* RIGHT SECTION */}
+      <div className={styles.Header__right}>
+        {/* Language Dropdown */}
+        <div className={styles.Language}>
+          <div className={styles.Language__trigger}>
+            <img src={flag} alt="flag" className={styles.Language__flag} />
+            <span className={styles.Language__code}>EN</span>
+
+            {/* React Icon Arrow */}
+            <FaCaretDown className={styles.Language__arrow} />
+          </div>
+
+          <div className={styles.Language__menu}>
+            <label>
+              <input type="radio" name="lang" /> English - EN
+            </label>
+            <label>
+              <input type="radio" name="lang" /> Español - ES
+            </label>
+            <label>
+              <input type="radio" name="lang" /> Deutsch - DE
+            </label>
+            <label>
+              <input type="radio" name="lang" /> العربية - AR
+            </label>
+            <label>
+              <input type="radio" name="lang" /> Français - FR
+            </label>
+          </div>
+        </div>
+
+        {/* Account */}
+        <div className={styles.NavItem}>
+          <span className={styles.NavItem__small}>Hello, sign in</span>
+          <span className={styles.NavItem__big}>Account & Lists</span>
+        </div>
+
+        {/* Orders */}
+        <div className={styles.NavItem}>
+          <span className={styles.NavItem__small}>Returns</span>
+          <span className={styles.NavItem__big}>& Orders</span>
+        </div>
+
+        {/* Cart */}
+        <Link to="/cart" className={styles.Cart}>
+          <BiCart className={styles.Cart__icon} />
+          <span className={styles.Cart__title}>Carts</span>
+          <span className={styles.Cart__count}>0</span>
+        </Link>
       </div>
     </header>
   );
