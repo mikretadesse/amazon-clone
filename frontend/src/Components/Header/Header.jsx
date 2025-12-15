@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
+import Delivery from "../Delivery/Delivery";
+import { DataContext } from "../DataProvider/DataProvider";
 
 import { GrLocation } from "react-icons/gr";
 import { FiSearch } from "react-icons/fi";
 import { BiCart } from "react-icons/bi";
 import { FaCaretDown } from "react-icons/fa";
 
-
 import flag from "../../assets/logo/Flag_of_usa.svg.png";
 import amazonLogo from "../../assets/logo/amazon-logo.png";
 
 function Header() {
+  // Local state to track the selected country for the delivery modal
+  const [country, setCountry] = useState("Ethiopia");
+
+  // Local state to control whether the Delivery modal is open or closed
+  const [modalOpen, setModalOpen] = useState(false);
+
+  // Access global state from DataContext
+  // - `basket` contains the current cart items
+  // - `dispatch` is used to send actions (e.g., add/remove cart items, set delivery location)
+  const { state: { basket = [] } = {}, dispatch } = useContext(DataContext);
+
   return (
     <header className={styles.Header}>
       {/* LEFT SECTION */}
@@ -26,14 +38,22 @@ function Header() {
         </Link>
 
         {/* Deliver Section */}
-        <div className={styles.Deliver}>
+        <div className={styles.Deliver} onClick={() => setModalOpen(true)}>
           <GrLocation className={styles.Deliver__icon} />
           <div>
             <p className={styles.Deliver__small}>Deliver to</p>
-            <span className={styles.Deliver__country}>Ethiopia</span>
+            <span className={styles.Deliver__country}>{country}</span>
           </div>
         </div>
       </div>
+
+      {modalOpen && (
+        <Delivery
+          country={country}
+          setCountry={setCountry}
+          onClose={() => setModalOpen(false)}
+        />
+      )}
 
       {/* SEARCH BAR */}
       <div className={styles.Search}>
@@ -102,7 +122,7 @@ function Header() {
         <Link to="/cart" className={styles.Cart}>
           <BiCart className={styles.Cart__icon} />
           <span className={styles.Cart__title}>Carts</span>
-          <span className={styles.Cart__count}>0</span>
+          <span className={styles.Cart__count}>{basket.length} </span>
         </Link>
       </div>
     </header>

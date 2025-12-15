@@ -1,0 +1,89 @@
+.CartPage {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  
+  .CartContainer {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .CartItems {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .CartItem {
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+  }
+  
+  .CartItem__image {
+    width: 150px;
+    object-fit: contain;
+  }
+  
+  .CartItem__info {
+    flex: 1;
+  }
+   
+  .CartItem__info h3 {
+    font-size: 24px;
+  }
+
+
+  .CartItem__description {
+    color: #555;
+    font-size: 15px;
+    margin: 5px 0;
+  }
+  
+  .CartItem__rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+  }
+  
+  .CartItem__price {
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .QuantityInput {
+    width: 50px;
+    padding: 2px 5px;
+    margin-left: 5px;
+  }
+  
+  .RemoveButton {
+    background: none;
+    border: none;
+    color: #007185;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  
+  .CartSummary {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 15px;
+    height: fit-content;
+  }
+  
+  .CheckoutButton {
+    background-color: #f0c14b;
+    border: 1px solid #a88734;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 16px;
+  }
+  

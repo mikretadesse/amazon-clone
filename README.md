@@ -17,3 +17,16 @@ Full-stack Amazon-style e-commerce project.
 
 ## Screenshots
 ![Home](screenshots/home-page.png)
+
+## Notes
+
+* This project is for educational purposes only.
+* No real payments or authentication are implemented.
+
+## Author
+
+Mikre Tadesse
+
+---
+
+**Evangadi Networks – Phase 4 Project**

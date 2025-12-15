@@ -79,10 +79,6 @@
   font-weight: 600;
 }
 
-.button:hover {
-  background: #e2bb0c;
-  transform: scale(1.05);
-}
 .loaderWrapper {
   display: flex;
   justify-content: center;

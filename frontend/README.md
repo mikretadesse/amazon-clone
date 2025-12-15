@@ -35,72 +35,17 @@ A production-ready Amazon-style e‑commerce frontend built as part of the Evang
 * Responsive layout
 
 ## Tech Stack
+- Frontend: React, CSS Modules, Vite
+- Backend: Node.js, Express, MongoDB
 
-* React
-* React Router
-* JavaScript (ES6+)
-* CSS Modules
-* Vite
+## Folder Structure
+- frontend/: React frontend
+- backend/: Node.js backend
 
-## Project Structure
+## Installation
+1. Clone repo
+2. Run `npm install` in both frontend and backend
+3. Run `npm run dev` in frontend, `node server.js` in backend
 
-```
-frontend/
-├── src/
-│   ├── Api/
-│   ├── Components/
-│   │   ├── Carousel/
-│   │   ├── Category/
-│   │   ├── CurrencyFormater/
-│   │   ├── Header/
-│   │   ├── LowerHeader/
-│   │   ├── Product/
-│   │   ├── ScrollToTop/
-│   │   └── SharedLayout/
-│   ├── Pages/
-│   │   ├── Home/
-│   │   ├── Auth/
-│   │   ├── Carts/
-│   │   ├── Orders/
-│   │   ├── Payment/
-│   │   ├── ProductDetails/
-│   │   ├── NotFound/
-│   ├── assets/
-│   ├── App.jsx
-│   └── main.jsx
-└── package.json
-```
-
-## Installation & Setup
-
-Clone the repository:
-
-```bash
-git clone https://github.com/mikretadesse/Amazon-Clone.git
-cd Amazon-Clone/frontend
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run the development server:
-
-```bash
-npm run dev
-```
-
-## Notes
-
-* This project is for educational purposes only.
-* No real payments or authentication are implemented.
-
-## Author
-
-Mikre Tadesse
-
----
-
-**Evangadi Networks – Phase 4 Project**
+## Screenshots
+![Home](screenshots/home-page.png)

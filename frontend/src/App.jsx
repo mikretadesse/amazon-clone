@@ -2,6 +2,7 @@ import react from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SharedLayout from "./Components/SharedLayout/SharedLayout";
 import ProductDetail from "./Pages/ProdeuctDetails/ProductDetail";
+import Delivery from "./Components/Delivery/Delivery";
 import Signup from "./Pages/Auth/Signup";
 import Carts from "./Pages/Carts/Carts";
 import Payment from "./Pages/Payment/Payment";
@@ -20,6 +21,7 @@ function App() {
         <Route path="auth" element={<Signup />} />
         <Route path="order" element={<Orders />} />
         <Route path="cart" element={<Carts />} />
+        <Route path="/delivery" element={<Delivery />} />
         <Route path="/category/:categoryName" element={<Results />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="*" element={<NotFound />} /> {/* 404 page */}
