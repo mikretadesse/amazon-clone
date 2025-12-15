@@ -1,0 +1,33 @@
+.categoryPage {
+    padding: 30px;
+  }
+  
+  .heading {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .categoryTitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .productGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+  }
+  
+  .loaderWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+  }
+  
+  .status {
+    padding: 30px;
+    text-align: center;
+    font-size: 16px;
+  }
+  

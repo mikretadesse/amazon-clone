@@ -1,0 +1,68 @@
+.loaderOverlay {
+  position: fixed;
+  inset: 0;
+  min-height: 50vh;
+  color: #25b09b;
+  background: rgba(255, 255, 255, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.status {
+  padding: 30px;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+}
+
+.details {
+  display: flex;
+  gap: 40px;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.imageBox img {
+  max-width: 400px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.description {
+  margin: 20px 0;
+  max-width: 700px;
+}
+
+.button {
+  padding: 5px 20px;
+  background-color: #25b09b;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.button:hover {
+  background-color: #1a8579;
+}

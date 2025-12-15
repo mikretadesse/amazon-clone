@@ -194,6 +194,8 @@
   flex-direction: column;
   padding: 5px;
   cursor: pointer;
+  color: white;
+  text-decoration: none;
 }
 
 .NavItem__small {

@@ -6,7 +6,7 @@ function Carousel() {
   const [current, setCurrent] = useState(0);
   const length = img.length;
 
-// Auto-play: change slide every 3 seconds 
+  // Auto-play: change slide every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % length);

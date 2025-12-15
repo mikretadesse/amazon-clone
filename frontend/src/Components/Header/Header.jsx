@@ -87,16 +87,16 @@ function Header() {
         </div>
 
         {/* Account */}
-        <div className={styles.NavItem}>
+        <Link to="/auth" className={styles.NavItem}>
           <span className={styles.NavItem__small}>Hello, sign in</span>
           <span className={styles.NavItem__big}>Account & Lists</span>
-        </div>
+        </Link>
 
         {/* Orders */}
-        <div className={styles.NavItem}>
+        <Link to="/order" className={styles.NavItem}>
           <span className={styles.NavItem__small}>Returns</span>
           <span className={styles.NavItem__big}>& Orders</span>
-        </div>
+        </Link>
 
         {/* Cart */}
         <Link to="/cart" className={styles.Cart}>

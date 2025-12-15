@@ -2,4 +2,10 @@
   --amazon-blue: #131921;
   --amazon-orange: #ff9900;
   --muted: #f3f3f3;
+  --primary-shade: #d69644;
+  --primary-color: #febd69;
+}
+body {
+  padding: 0px;
+  margin: 0px;
 }
