@@ -6,14 +6,17 @@ A production-ready Amazon-style e‑commerce frontend built as part of the Evang
 
 > my project demo screenshots here
 
-![Home Page Screenshot](./screenshots/home.png)  
-![Categorty Page Screenshot](./screenshots/movies.png)  
-![Product Detail page Screenshot](./screenshots/latest.png)
-![Cart page Screenshot](./screenshots/tvshows.png)
-![Product Page Screenshot](./screenshots/mylist.png)
-![Browse Languages Screenshot](./screenshots/browse_languages.png)
-![Search Screenshot](./screenshots/search.png)
+### Home Page
+![Home Page](screenshots/home-page.png)
 
+### Product Page
+![Product Page](screenshots/product-page.png)
+
+### Cart Page
+![Cart Page](screenshots/cart-page.png)
+
+### Mobile View
+![Mobile Responsive](screenshots/mobile-responsive.png)
 ---
 
 ## GitHub Repository
