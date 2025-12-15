@@ -3,7 +3,7 @@ import Carousel from "../../Components/Carousel/Carousel.jsx";
 import CategoryList from "../../Components/Category/CategoryList.jsx";
 import Product from "../../Components/Product/Product.jsx";
 
-function Landing() {
+function Home() {
   return (
     <>
       <Carousel />
@@ -13,4 +13,4 @@ function Landing() {
   );
 }
 
-export default Landing;
+export default Home;

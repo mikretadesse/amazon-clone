@@ -1,16 +1,103 @@
-# React + Vite
+# Amazon Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A production-ready Amazon-style e‑commerce frontend built as part of the Evangadi Phase‑4 project. The application focuses on clean component architecture, reusable UI patterns, and realistic shopping flows.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> my project demo screenshots here
 
-## React Compiler
+![Home Page Screenshot](./screenshots/home.png)  
+![Categorty Page Screenshot](./screenshots/movies.png)  
+![Product Detail page Screenshot](./screenshots/latest.png)
+![Cart page Screenshot](./screenshots/tvshows.png)
+![Product Page Screenshot](./screenshots/mylist.png)
+![Browse Languages Screenshot](./screenshots/browse_languages.png)
+![Search Screenshot](./screenshots/search.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## GitHub Repository
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+[https://github.com/mikretadesse/Amazon-Clone](https://github.com/mikretadesse/Amazon-Clone)
+
+## Features
+
+* Home page with promotional carousel
+* Category-based product browsing
+* Product listing and detail views
+* Cart functionality (add/remove items)
+* Currency formatting
+* Loading states 
+* Scroll-to-top behavior on navigation
+* Responsive layout
+
+## Tech Stack
+
+* React
+* React Router
+* JavaScript (ES6+)
+* CSS Modules
+* Vite
+
+## Project Structure
+
+```
+frontend/
+├── src/
+│   ├── Api/
+│   ├── Components/
+│   │   ├── Carousel/
+│   │   ├── Category/
+│   │   ├── CurrencyFormater/
+│   │   ├── Header/
+│   │   ├── LowerHeader/
+│   │   ├── Product/
+│   │   ├── ScrollToTop/
+│   │   └── SharedLayout/
+│   ├── Pages/
+│   │   ├── Home/
+│   │   ├── Auth/
+│   │   ├── Carts/
+│   │   ├── Orders/
+│   │   ├── Payment/
+│   │   ├── ProductDetails/
+│   │   ├── NotFound/
+│   ├── assets/
+│   ├── App.jsx
+│   └── main.jsx
+└── package.json
+```
+
+## Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/mikretadesse/Amazon-Clone.git
+cd Amazon-Clone/frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+## Notes
+
+* This project is for educational purposes only.
+* No real payments or authentication are implemented.
+
+## Author
+
+Mikre Tadesse
+
+---
+
+**Evangadi Networks – Phase 4 Project**

@@ -8,7 +8,7 @@ A production-ready Amazon-style e‑commerce frontend built as part of the Evang
 
 ![Home Page Screenshot](./screenshots/home.png)  
 ![Categorty Page Screenshot](./screenshots/movies.png)  
-![Product Detail page Screenshot](./screenshots/latest.png)
+![Product Detail page Screenshot](./screenshots/product-datail-page)
 ![Cart page Screenshot](./screenshots/tvshows.png)
 ![Product Page Screenshot](./screenshots/mylist.png)
 ![Browse Languages Screenshot](./screenshots/browse_languages.png)
