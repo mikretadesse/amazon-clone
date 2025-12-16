@@ -53,19 +53,6 @@
   color: #fff;
 }
 
-/* Country Selector */
-.countryRow {
-  background: var(--amazon-dark);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.countrySelect {
-  padding: 6px 12px;
-  background: #fff;
-  border-radius: 4px;
-  border: none;
-  font-size: 14px;
-}
 
 /* Payment Icons */
 .payments {

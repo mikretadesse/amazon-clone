@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Rating from "@mui/material/Rating";
 import { FadeLoader } from "react-spinners";
 import { productUrl } from "../../Api/EndPoints";
+import { DataContext } from "../../Components/DataProvider/DataProvider";
+import { type } from "../../Pages/Utility/Action.type";
 import currencyFormatter from "../../Components/CurrencyFormater/CurrencyFormater";
 import styles from "./ProductDetail.module.css";
 
 function ProductDetails() {
   const { id } = useParams();
+  const { dispatch } = useContext(DataContext);
+
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -21,7 +25,9 @@ function ProductDetails() {
     setError(null);
 
     axios
-      .get(`${productUrl}products/${id}`)
+      .get(`${productUrl}products/${id}`, {
+        setTimeout: 10000,
+      })
       .then((res) => {
         setProduct(res.data);
         setLoading(false);
@@ -32,6 +38,23 @@ function ProductDetails() {
         setLoading(false);
       });
   }, [id]);
+
+  const addToCart = () => {
+    dispatch({
+      type: type.ADD_TO_CART,
+      payload: {
+        id: product.id,
+        image: product.image,
+        title: product.title,
+        description: product.description,
+        price: product.price,
+        rating: product.rating,
+      },
+    });
+  };
+  
+
+
 
   // Set dynamic page title
   useEffect(() => {
@@ -61,11 +84,11 @@ function ProductDetails() {
         <h1>{product.title}</h1>
         <p className={styles.description}>{product.description}</p>
         <div className={styles.rating}>
-          <Rating value={product.rating.rate} precision={0.1} readOnly />
-          <span>({product.rating.count} ratings)</span>
+          <Rating value={product.rating?.rate || 0} precision={0.1} readOnly />
+          <span>({product.rating?.count || 0} ratings)</span>
         </div>
         <div className={styles.price}>{currencyFormatter(product.price)}</div>
-        <button className={styles.button}>Add to Cart</button>
+        <button className={styles.button} onClick={addToCart}>Add to Cart</button>
       </div>
     </section>
   );
