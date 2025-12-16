@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { DataProvider } from "./Components/DataProvider/DataProvider.jsx";
 import { reducer, initialState } from "./Pages/Utility/Reducer.js";
 
@@ -12,9 +12,9 @@ import App from "./App.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <DataProvider reducer={reducer} initialState={initialState}>
-      <BrowserRouter>
+      <HashRouter>
         <App />
-      </BrowserRouter>
+      </HashRouter>
     </DataProvider>
   </StrictMode>
 );
