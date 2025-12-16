@@ -53,24 +53,27 @@
   color: #fff;
 }
 
-
 /* Payment Icons */
-.payments {
-  background: #0e1620;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+.paymentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 0;
+  flex-wrap: wrap;
 }
 
-.payments img {
-  width: 45px;
-  height: auto;
-  margin: 0 8px;
-  filter: brightness(90%);
-  transition: 0.2s;
+.paymentContainer img {
+  height: 24px;
+  width: auto;
+  object-fit: contain;
+  transition: filter 0.2s;
 }
 
-.payments img:hover {
-  filter: brightness(100%);
+.paymentContainer img:hover {
+  filter: brightness(1.1);
 }
+
 
 /* Bottom Bar */
 .bottomBar {

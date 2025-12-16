@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "../Header/Header";
-import Footer from "../Footer/Footer.jsx";
-import LowerHeader from "../LowerHeader/LowerHeader.jsx";
+import LowerHeader from "../LowerHeader/LowerHeader";
 import ScrollToTop from "../ScrollToTop/ScrollToTop";
+import Footer from "../Footer/Footer";
 import { Outlet } from "react-router-dom";
 
 function SharedLayout() {

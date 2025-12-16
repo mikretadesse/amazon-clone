@@ -40,19 +40,19 @@ function Carts() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className={styles.CartItem__image}
+                  className={styles.CartItem_image}
                 />
 
-                <div className={styles.CartItem__info}>
+                <div className={styles.CartItem_info}>
                   <h3>{item.title}</h3>
                   {item.description && (
-                    <p className={styles.CartItem__description}>
+                    <p className={styles.CartItem_description}>
                       {item.description}
                     </p>
                   )}
 
                   {item.rating && (
-                    <div className={styles.CartItem__rating}>
+                    <div className={styles.CartItem_rating}>
                       <Rating
                         value={item.rating.rate || 0}
                         precision={0.1}
@@ -63,7 +63,7 @@ function Carts() {
                     </div>
                   )}
 
-                  <p className={styles.CartItem__price}>
+                  <p className={styles.CartItem_price}>
                     ${item.price?.toFixed(2)}
                   </p>
 

@@ -8,7 +8,6 @@ import discover from "../../assets/Icon/discover.svg";
 
 
 const Footer = () => {
-  console.log("Footer rendered");
   return (
     <footer className={styles.footer}>
       {/* Back To Top */}
@@ -91,8 +90,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-<p>TEST FOOTER</p>
-
 
       {/* Payment Icons */}
       <div className={styles.payments}>

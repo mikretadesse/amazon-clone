@@ -13,9 +13,6 @@ import Home from "./Pages/Home/Home";
 import "./App.css";
 
 function App() {
-  <h1 style={{ color: "red", fontSize: "40px" }}>
-  VITE HARD RESET TEST
-</h1>
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
