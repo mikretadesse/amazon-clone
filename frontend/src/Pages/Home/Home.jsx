@@ -1,7 +1,7 @@
 import React from "react";
-import Carousel from "../../Components/Carousel/Carousel.jsx";
-import CategoryList from "../../Components/Category/CategoryList.jsx";
-import Product from "../../Components/Product/Product.jsx";
+import Carousel from "../../Components/Carousel/Carousel";
+import CategoryList from "../../Components/Category/CategoryList";
+import Product from "../../Components/Product/Product";
 
 function Home() {
   return (

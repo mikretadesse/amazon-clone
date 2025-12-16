@@ -9,7 +9,7 @@ import { type } from "../../Pages/Utility/Action.type";
 import currencyFormatter from "../../Components/CurrencyFormater/CurrencyFormater";
 import styles from "./ProductDetail.module.css";
 
-function ProductDetails() {
+function ProductDetail() {
   const { id } = useParams();
   const { dispatch } = useContext(DataContext);
 
@@ -26,7 +26,7 @@ function ProductDetails() {
 
     axios
       .get(`${productUrl}products/${id}`, {
-        setTimeout: 10000,
+        timeout: 10000,
       })
       .then((res) => {
         setProduct(res.data);
@@ -94,4 +94,4 @@ function ProductDetails() {
   );
 }
 
-export default ProductDetails;
+export default ProductDetail;
