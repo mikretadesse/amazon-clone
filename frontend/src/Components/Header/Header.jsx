@@ -24,6 +24,12 @@ function Header() {
   // - `dispatch` is used to send actions (e.g., add/remove cart items, set delivery location)
   const { state: { basket = [] } = {}, dispatch } = useContext(DataContext);
 
+  // Calculate total number of items in the cart
+  const totalItemsInCart = basket.reduce(
+    (sum, item) => sum + (item.quantity || 1),
+    0
+  );
+
   return (
     <header className={styles.Header}>
       {/* LEFT SECTION */}
@@ -121,8 +127,8 @@ function Header() {
         {/* Cart */}
         <Link to="/cart" className={styles.Cart}>
           <BiCart className={styles.Cart__icon} />
-          <span className={styles.Cart__title}>Carts</span>
-          <span className={styles.Cart__count}>{basket.length} </span>
+          <span className={styles.Cart__title}>Cart</span>
+          <span className={styles.Cart__count}>{totalItemsInCart} </span>
         </Link>
       </div>
     </header>

@@ -22,6 +22,7 @@ function App() {
         <Route path="order" element={<Orders />} />
         <Route path="cart" element={<Carts />} />
         <Route path="/delivery" element={<Delivery />} />
+        <Route path="/payment" element={<Payment />} />
         <Route path="/category/:categoryName" element={<Results />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="*" element={<NotFound />} /> {/* 404 page */}
