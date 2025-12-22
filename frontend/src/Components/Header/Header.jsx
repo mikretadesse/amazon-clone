@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import Delivery from "../Delivery/Delivery";
 import { DataContext } from "../DataProvider/DataProvider";
+import { signOut } from "firebase/auth";
+import { auth } from "../../Pages/Utility/firebase"; // firebase config
+import { type } from "../../Pages/Utility/Action.type";
 
 import { GrLocation } from "react-icons/gr";
 import { FiSearch } from "react-icons/fi";
@@ -19,16 +22,23 @@ function Header() {
   // Local state to control whether the Delivery modal is open or closed
   const [modalOpen, setModalOpen] = useState(false);
 
-  // Access global state from DataContext
-  // - `basket` contains the current cart items
-  // - `dispatch` is used to send actions (e.g., add/remove cart items, set delivery location)
-  const { state: { basket = [] } = {}, dispatch } = useContext(DataContext);
+  const { state, dispatch } = useContext(DataContext);
+  const { user, basket = [] } = state || {};
 
   // Calculate total number of items in the cart
   const totalItemsInCart = basket.reduce(
     (sum, item) => sum + (item.quantity || 1),
     0
   );
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      dispatch({ type: type.SET_USER, user: null });
+    } catch (err) {
+      console.error("Sign out error:", err);
+    }
+  };
 
   return (
     <header className={styles.Header}>
@@ -113,9 +123,23 @@ function Header() {
         </div>
 
         {/* Account */}
-        <Link to="/auth" className={styles.NavItem}>
-          <span className={styles.NavItem__small}>Hello, sign in</span>
-          <span className={styles.NavItem__big}>Account & Lists</span>
+        <Link
+          to={!user ? "/auth" : "#"}
+          onClick={user ? handleSignOut : undefined}
+          className={styles.NavItem}>
+          {user ? (
+            <>
+              <span className={styles.NavItem__small}>
+                Hello {user?.email?.split("@")[0]}
+              </span>
+              <span className={styles.NavItem__big}>Sign Out</span>
+            </>
+          ) : (
+            <>
+              <span className={styles.NavItem__small}>Hello, Sign In</span>
+              <span className={styles.NavItem__big}>Account & Lists</span>
+            </>
+          )}
         </Link>
 
         {/* Orders */}

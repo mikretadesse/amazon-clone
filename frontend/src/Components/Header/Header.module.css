@@ -189,11 +189,11 @@
 .Language__menu label:hover {
   background-color: #f3f3f3;
 }
-
 /* ======= NAV ITEMS ========== */
 .NavItem {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 5px;
   cursor: pointer;
   color: white;
@@ -203,11 +203,13 @@
 .NavItem__small {
   font-size: 12px;
   font-weight: 400;
+  line-height: 1.2;
 }
 
 .NavItem__big {
   font-size: 14px;
   font-weight: 700;
+  line-height: 1.2;
 }
 
 /* ======= CART ========= */
