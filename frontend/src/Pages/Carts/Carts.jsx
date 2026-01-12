@@ -122,7 +122,7 @@ const Cart = () => {
           </div>
 
           <Link
-            to={basket.length === 0 ? "#" : "/payment"}
+            to={basket.length === 0 ? "#" : "/payments"}
             className={`${styles.CheckoutButton} ${
               basket.length === 0 ? styles.Disabled : ""
             }`}

@@ -1,4 +1,4 @@
-import { auth } from "./Pages/Utility/firebase.js"; // path to firebase.js
+import { auth } from "./firebase.js"; // path to firebase.js
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,

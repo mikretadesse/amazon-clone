@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { FadeLoader } from "react-spinners";
+import { DataContext } from "../DataProvider/DataProvider";
 import ProductCard from "../Product/ProductCard";
 import styles from "./ProductCard.module.css";
 
 function Product() {
+  const { state } = useContext(DataContext);
+  const { searchTerm = "" } = state; // Get search term from context
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -38,11 +41,22 @@ function Product() {
     return <div className={styles.status}>{error}</div>;
   }
 
+  // Filter products based on search term (title, description, category)
+  const filteredProducts = products.filter((product) =>
+    `${product.title} ${product.description} ${product.category}`
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className={styles.productGrid}>
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+      {filteredProducts.length > 0 ? (
+        filteredProducts.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))
+      ) : (
+        <p className={styles.noResults}>No products found.</p>
+      )}
     </div>
   );
 }

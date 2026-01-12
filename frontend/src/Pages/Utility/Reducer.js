@@ -1,8 +1,10 @@
 import { type } from "./Action.type";
 
+// Initial state
 export const initialState = {
   basket: [],
   user: null,
+  searchTerm: "",
 };
 
 export const reducer = (state, action) => {
@@ -47,6 +49,17 @@ export const reducer = (state, action) => {
         user: action.user,
       };
 
+    case type.EMPTY_BASKET:
+      return {
+        ...state,
+        basket: [],
+      };
+
+    case type.SET_SEARCH_TERM:
+      return {
+        ...state,
+        searchTerm: action.searchTerm,
+      };
     default:
       return state;
   }

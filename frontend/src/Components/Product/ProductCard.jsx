@@ -18,13 +18,12 @@ function ProductCard({ product }) {
         id,
         image,
         title,
-        description, 
+        description,
         price,
         rating,
       },
     });
   };
-  
 
   return (
     <div className={styles.card}>
@@ -33,7 +32,9 @@ function ProductCard({ product }) {
       </Link>
 
       <div className={styles.info}>
-        <h3 className={styles.title}>{title}</h3>
+        <Link to={`/product/${id}`} className={styles.title}>
+          <h3 className={styles.title}>{title}</h3>
+        </Link>
 
         <div className={styles.ratingBox}>
           <Rating value={rating?.rate || 0} precision={0.1} readOnly />

@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 import Delivery from "../Delivery/Delivery";
 import { DataContext } from "../DataProvider/DataProvider";
 import { signOut } from "firebase/auth";
-import { auth } from "../../Pages/Utility/firebase"; // firebase config
+import { auth } from "../../firebase"; // firebase config
 import { type } from "../../Pages/Utility/Action.type";
 
 import { GrLocation } from "react-icons/gr";
@@ -23,6 +23,7 @@ function Header() {
   const [modalOpen, setModalOpen] = useState(false);
 
   const { state, dispatch } = useContext(DataContext);
+  const searchTerm = state.searchTerm || "";
   const { user, basket = [] } = state || {};
 
   // Calculate total number of items in the cart
@@ -38,6 +39,13 @@ function Header() {
     } catch (err) {
       console.error("Sign out error:", err);
     }
+  };
+
+  const handleSearchChange = (e) => {
+    dispatch({
+      type: type.SET_SEARCH_TERM,
+      searchTerm: e.target.value,
+    });
   };
 
   return (
@@ -84,6 +92,8 @@ function Header() {
           type="text"
           placeholder="Search Amazon"
           className={styles.Search__input}
+          value={searchTerm}
+          onChange={handleSearchChange}
         />
 
         <button className={styles.Search__button}>
@@ -143,7 +153,7 @@ function Header() {
         </Link>
 
         {/* Orders */}
-        <Link to="/order" className={styles.NavItem}>
+        <Link to="/orders" className={styles.NavItem}>
           <span className={styles.NavItem__small}>Returns</span>
           <span className={styles.NavItem__big}>& Orders</span>
         </Link>

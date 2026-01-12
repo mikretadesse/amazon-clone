@@ -1,11 +1,10 @@
 import React, { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FadeLoader } from "react-spinners";
-
+import { auth } from "../../firebase";
 import styles from "./Auth.module.css";
 import amazonLogo from "../../assets/logo/amazon-logo2.png";
 
-import { auth } from "../Utility/firebase";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -28,6 +27,10 @@ function Auth() {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+  const navStateData = useLocation();
+
+  const redirectPath = navStateData.state?.redirect || "/";
+  const redirectMsg = navStateData.state?.msg || null;
 
   // Centralized friendly error messages
   const getFriendlyError = (code) => {
@@ -63,7 +66,7 @@ function Auth() {
         setMessage(`Welcome back, ${userCredential.user.email.split("@")[0]}!`);
         // Dispatch and navigate
         dispatch({ type: type.SET_USER, user: userCredential.user });
-        navigate("/"); // Redirect after successful login
+        navigate(redirectPath, { replace: true }); // Redirect after successful login
       } else {
         // Create new account
         userCredential = await createUserWithEmailAndPassword(
@@ -121,10 +124,11 @@ function Auth() {
         <h1 className={styles.title}>
           {isSignIn ? "Sign-in" : "Create Account"}
         </h1>
-
+        {redirectMsg && (
+          <small className={styles.redirectMsg}>{redirectMsg}</small>
+        )}
         {error && <p className={styles.error}>{error}</p>}
         {message && <p className={styles.message}>{message}</p>}
-
         <form onSubmit={handleSubmit}>
           <div className={styles.field}>
             <label htmlFor="email">Email or mobile phone number</label>
@@ -174,7 +178,6 @@ function Auth() {
             )}
           </button>
         </form>
-
         <div className={styles.agreement}>
           <p>
             By {isSignIn ? "signing-in" : "continuing"} you agree to the Amazon
@@ -182,7 +185,6 @@ function Auth() {
             Cookies Notice and Interest-Based Ads Notice.
           </p>
         </div>
-
         {isSignIn ? (
           <>
             <div className={styles.divider}>

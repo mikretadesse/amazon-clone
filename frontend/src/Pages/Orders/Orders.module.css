@@ -1,0 +1,152 @@
+.container {
+  background-color: #efeeee;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.orders_container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.orders_container h1 {
+  padding-bottom: 15px;
+  font-size: 28px;
+  color: #111;
+  border-bottom: 2px solid var(--primary-shade, #ff9900);
+}
+
+/* Loading / empty */
+.loading,
+.empty {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 50px;
+  color: #555;
+}
+
+/* Individual order */
+.order {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.order:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.order h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+
+.order p {
+  display: flex;
+  gap: 8px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+/* Items inside order */
+.items {
+  margin-top: 15px;
+}
+
+.product {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+.product:last-child {
+  border-bottom: none;
+}
+
+.product:hover {
+  background-color: #f9f9f9;
+}
+
+.productImage {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.productInfo {
+  flex: 1;
+}
+
+.productTitle {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.ratingBox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.loaderWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  gap: 15px;
+  color: #555;
+  font-size: 18px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .product {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .productImage {
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 10px;
+  }
+
+  .productInfo {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+  .product {
+    gap: 5px;
+  }
+
+  .orders_container h1 {
+    font-size: 24px;
+  }
+
+  .productTitle {
+    font-size: 16px;
+  }
+
+  .order h3 {
+    font-size: 16px;
+  }
+}

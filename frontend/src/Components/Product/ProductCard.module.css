@@ -36,6 +36,7 @@
   font-weight: 600;
   color: #111;
   text-align: left;
+  text-decoration: none;
 }
 
 .ratingBox {
@@ -109,4 +110,3 @@
   gap: 25px;
   padding: 20px;
 }
-
