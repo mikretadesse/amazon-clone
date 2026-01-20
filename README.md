@@ -55,7 +55,10 @@ An Amazon-like e-commerce web application built with React, Vite, Firebase, Stri
 
 ## Screenshots
 
-![Product detail page](product-detail-page.png)
+![Home Page ](./screenshots/home.png)  
+![Category page](./screenshots/categoryPage.png)
+![Carts page](./screenshots/cartsPage.png)
+![Product detail page](./screenshots/productDetail.png)
 
 ## Notes
 
