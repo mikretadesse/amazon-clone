@@ -77,7 +77,8 @@ function Auth() {
 
         await sendEmailVerification(userCredential.user);
         setMessage(
-          "Account created! Verification email sent. Please check your inbox."
+          "Account created successfully! You are now logged in."
+          // "Account created! Verification email sent. Please check your inbox."
         );
 
         // Dispatch user but stay on page until verification
